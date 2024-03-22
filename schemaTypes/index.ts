@@ -16,6 +16,7 @@ import collection from './documents/collection'
 import colorTheme from './documents/colorTheme'
 import page from './documents/page'
 import post from './documents/post'
+import service from './documents/serice'
 import product from './documents/product'
 import productVariant from './documents/productVariant'
 
