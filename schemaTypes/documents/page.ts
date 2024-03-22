@@ -1,7 +1,7 @@
-import {DocumentIcon} from '@sanity/icons'
-import {defineField} from 'sanity'
+import { DocumentIcon } from '@sanity/icons'
+import { defineField } from 'sanity'
 
-import {validateSlug} from '../../utils/validateSlug'
+import { validateSlug } from '../../utils/validateSlug'
 
 export default defineField({
   name: 'page',
@@ -31,11 +31,21 @@ export default defineField({
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
+    // Date
+    defineField({
+      title: 'Release date',
+      name: 'releaseDate',
+      type: 'date',
+      options: {
+        dateFormat: 'YYYY-MM-DD',
+        calendarTodayLabel: 'Today'
+      }
+    }),
     // Slug
     defineField({
       name: 'slug',
       type: 'slug',
-      options: {source: 'title'},
+      options: { source: 'title' },
       // @ts-ignore - TODO - fix this TS error
       validation: validateSlug,
     }),
@@ -44,7 +54,7 @@ export default defineField({
       name: 'colorTheme',
       title: 'Color theme',
       type: 'reference',
-      to: [{type: 'colorTheme'}],
+      to: [{ type: 'colorTheme' }],
       group: 'theme',
     }),
     // Show hero
@@ -61,7 +71,7 @@ export default defineField({
       name: 'hero',
       title: 'Hero',
       type: 'hero.page',
-      hidden: ({document}) => !document?.showHero,
+      hidden: ({ document }) => !document?.showHero,
       group: 'editorial',
     }),
     // Body
@@ -86,7 +96,7 @@ export default defineField({
       title: 'title',
     },
     prepare(selection) {
-      const {seoImage, title} = selection
+      const { seoImage, title } = selection
 
       return {
         media: seoImage,
