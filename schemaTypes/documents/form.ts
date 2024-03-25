@@ -26,15 +26,24 @@ export default defineField({
     fields: [
         // Title
         defineField({
-            name: 'title',
-            title: 'Title',
+            name: 'firstname',
+            title: 'Firstname',
             type: 'string',
-            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'lastname',
+            title: 'Lastname',
+            type: 'string',
+        }),
+        defineField({
+            name: 'email',
+            title: 'Email',
+            type: 'string',
         }),
         // Textarea
         defineField({
-            title: 'Description',
-            name: 'description',
+            title: 'Message',
+            name: 'message',
             type: 'text'
         })
         // Date
