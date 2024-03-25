@@ -4,8 +4,8 @@ import { defineField } from 'sanity'
 import { validateSlug } from '../../utils/validateSlug'
 
 export default defineField({
-    name: 'post',
-    title: 'Post',
+    name: 'form',
+    title: 'Form',
     type: 'document',
     icon: DocumentIcon,
     groups: [
@@ -31,51 +31,30 @@ export default defineField({
             type: 'string',
             validation: (Rule) => Rule.required(),
         }),
-        // Date
-        defineField({
-            title: 'Release date',
-            name: 'releaseDate',
-            type: 'date',
-            options: {
-                dateFormat: 'YYYY-MM-DD',
-                calendarTodayLabel: 'Today'
-            }
-        }),
-        // Slug
-        defineField({
-            name: 'slug',
-            type: 'slug',
-            options: { source: 'title' },
-            // @ts-ignore - TODO - fix this TS error
-            validation: validateSlug,
-        }),
-        // Image
-        defineField({
-            title: 'Poster',
-            name: 'poster',
-            type: 'image',
-            options: {
-                hotspot: true // <-- Defaults to false
-            },
-            fields: [
-                {
-                    name: 'caption',
-                    type: 'string',
-                    title: 'Caption',
-                },
-                {
-                    name: 'attribution',
-                    type: 'string',
-                    title: 'Attribution',
-                }
-            ]
-        }),
-        //Description
+        // Textarea
         defineField({
             title: 'Description',
             name: 'description',
             type: 'text'
         })
+        // Date
+        // defineField({
+        //     title: 'Release date',
+        //     name: 'releaseDate',
+        //     type: 'date',
+        //     options: {
+        //         dateFormat: 'YYYY-MM-DD',
+        //         calendarTodayLabel: 'Today'
+        //     }
+        // }),
+        // Slug
+        // defineField({
+        //     name: 'slug',
+        //     type: 'slug',
+        //     options: { source: 'title' },
+        //     // @ts-ignore - TODO - fix this TS error
+        //     validation: validateSlug,
+        // }),
     ],
     preview: {
         select: {

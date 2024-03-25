@@ -16,11 +16,12 @@ import collection from './documents/collection'
 import colorTheme from './documents/colorTheme'
 import page from './documents/page'
 import post from './documents/post'
+import form from './documents/form'
 import service from './documents/service'
 import product from './documents/product'
 import productVariant from './documents/productVariant'
 
-const documents = [collection, colorTheme, page, post, service, product, productVariant]
+const documents = [collection, colorTheme, page, post, form, service, product, productVariant]
 
 // Singleton document types
 import home from './singletons/home'
