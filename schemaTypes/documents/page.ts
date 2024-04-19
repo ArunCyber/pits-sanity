@@ -22,6 +22,12 @@ export default defineField({
       name: 'seo',
       title: 'SEO',
     },
+    {
+      name: 'contact-page-fields',
+      title: 'Contact Page Fields',
+      // hidden: ({ parent }) => parent?._id == '78ffe25d-c1ea-4cae-b3a7-47b70f5e7c8a',
+      // hidden: [{ _id: '78ffe25d-c1ea-4cae-b3a7-47b70f5e7c8a' }],
+    },
   ],
   fields: [
     // Title
@@ -88,6 +94,26 @@ export default defineField({
       type: 'seo.page',
       group: 'seo',
     }),
+    // Contact page fields
+    defineField({
+      name: 'contactEmail',
+      title: 'Contact Email',
+      type: 'string',
+      group: 'contact-page-fields',
+    }),
+    defineField({
+      name: 'contactPhone',
+      title: 'Contact Phone',
+      type: 'string',
+      group: 'contact-page-fields',
+    }),
+    defineField({
+      name: 'contactMapArea',
+      title: 'Map Section',
+      type: 'array',
+      of: [{ type: 'block' }],
+      group: 'contact-page-fields',
+    }),
   ],
   preview: {
     select: {
@@ -97,7 +123,8 @@ export default defineField({
     },
     prepare(selection) {
       const { seoImage, title } = selection
-
+      // console.log(slug);
+      // console.log(document);
       return {
         media: seoImage,
         title,
