@@ -108,6 +108,12 @@ export default defineField({
       group: 'contact-page-fields',
     }),
     defineField({
+      name: 'contactAddress',
+      title: 'Contact Address',
+      type: 'text',
+      group: 'contact-page-fields',
+    }),
+    defineField({
       name: 'contactMapArea',
       title: 'Map Section',
       type: 'array',
