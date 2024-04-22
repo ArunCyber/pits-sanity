@@ -1,5 +1,5 @@
-import {HomeIcon} from '@sanity/icons'
-import {defineField} from 'sanity'
+import { HomeIcon } from '@sanity/icons'
+import { defineField } from 'sanity'
 
 const TITLE = 'Home'
 
@@ -33,12 +33,12 @@ export default defineField({
       title: 'Modules',
       type: 'array',
       of: [
-        {type: 'module.callout'},
-        {type: 'module.callToAction'},
-        {type: 'module.collection'},
-        {type: 'module.image'},
-        {type: 'module.instagram'},
-        {type: 'module.product'},
+        { type: 'module.callout' },
+        { type: 'module.callToAction' },
+        { type: 'module.collection' },
+        { type: 'module.image' },
+        { type: 'module.instagram' },
+        { type: 'module.product' },
       ],
       group: 'editorial',
     }),
@@ -48,6 +48,14 @@ export default defineField({
       title: 'SEO',
       type: 'seo.home',
       group: 'seo',
+    }),
+    // Text
+    defineField({
+      name: 'homeContent',
+      title: 'Description',
+      type: 'text',
+      // validation: (Rule) => Rule.required(),
+      group: 'editorial',
     }),
   ],
   preview: {
